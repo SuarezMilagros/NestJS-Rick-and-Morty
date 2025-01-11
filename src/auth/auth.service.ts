@@ -5,7 +5,8 @@ import { Address } from 'src/models/addres.model';
 @Injectable()
 export class AuthService {
   private users = [
-    { userId: 1, email: 'test@example.com', password: 'password123', name: 'nombre prueba' }, // Usuarios de prueba
+    { userId: 1, email: 'admin@example.com', password: 'administrador', name: 'Administrador' }, 
+    { userId: 2, email: 'user@example.com', password: 'usuario123', name: 'Usuario'}
   ];
 
   constructor(private jwtService: JwtService) {}
@@ -46,6 +47,8 @@ export class AuthService {
 
     this.users.push(newUser);
     return { message: 'User registered successfully', userId: newUser.userId };
+
+    //falta guardar en la base de datos los nuevos usuarios
   }
 
   async getProfile(id:number) {

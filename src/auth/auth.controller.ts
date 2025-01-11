@@ -27,7 +27,5 @@ export class AuthController {
   return this.authService.getProfile(Number(id)); // Convertir id a número si es necesario
 }
 
-
-  
 }
 
